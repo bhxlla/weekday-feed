@@ -15,16 +15,20 @@ export const Feed = ({ list, onEndReached, keyExtractor, renderItem, renderFoote
   
     return (
       <>
-        {
-          list.map((element, index) => (
-            <Fragment key={keyExtractor(element, index)} >
-              {renderItem(element, index)}
-            </Fragment>
-          ))
-        }
-        {
-          renderFooter()
-        }
+        <div className="feed-container" >
+          {
+            list.map((element, index) => (
+              <Fragment key={keyExtractor(element, index)} >
+                {renderItem(element, index)}
+              </Fragment>
+            ))
+          }
+        </div>
+        <div className="feed-footer" >
+          {
+            renderFooter()
+          }
+        </div>
       </>
     )
   
