@@ -1,25 +1,37 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="App">
+      <h3>Hey!</h3>
+      <FeedPage />
+    </main>
   );
 }
+
+const FeedPage = () => {
+
+  const [jobsList, setJobsList] = useState([]);
+
+  return (
+    <section>
+      <Feed list={jobsList} />
+    </section>
+  )
+
+}
+
+const Feed = ({ list }) => {
+
+  return list.map(el => (
+    <div key={el.jdUid} >
+      <p>{el.companyName}, {el.jobRole}</p>
+    </div>
+  ))
+
+}
+
 
 export default App;
