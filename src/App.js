@@ -12,16 +12,18 @@ function App() {
   );
 }
 
+const INIT_PAGE_SIZE = 30;
+const NEXT_PAGE_SIZE = 20;
+
 const FeedPage = () => {
 
-  const PAGE_SIZE = 20;
   
   const [jobsList, setJobsList] = useState([]);
   const [offset, setOffset] = useState(0);
   const [bottomLoading, setBottomLoading] = useState(false);
 
   const getData = useCallback(() => {
-    const { fetchData, cancel } = Api.fetcher(offset, PAGE_SIZE)
+    const { fetchData, cancel } = Api.fetcher(offset, offset === 0 ? INIT_PAGE_SIZE : NEXT_PAGE_SIZE)
     setBottomLoading(true);
     fetchData()
       .then(({ offset, jdList }) => {
