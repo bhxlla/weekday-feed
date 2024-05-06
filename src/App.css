@@ -11,7 +11,7 @@ p, h3, h2 {
 
 @font-face {
   font-family: "Lexend";
-  src: url("../../Assets/Lexend-VariableFont_wght.ttf");
+  src: url("./Assets/Lexend-VariableFont_wght.ttf");
 }
 
 * {
