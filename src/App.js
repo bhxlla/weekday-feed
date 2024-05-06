@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { Fragment, useCallback, useEffect, useState } from 'react';
 import Api from './Utils/Api'
 import './App.css';
 
@@ -49,19 +49,29 @@ const FeedPage = () => {
     getData();
   }, [getData, bottomLoading, setBottomLoading, ended])
 
+  const getKey = useCallback(el => el.jdUid, [])
+
+  const renderItem = useCallback((el) => (
+    <p>{el.companyName}, {el.jobRole}</p>
+  ), [])
+
+  const renderFooter = useCallback(() => bottomLoading ? (<h1>LOADING</h1>) : <></>, [bottomLoading])
 
   return (
     <section>
-      <Feed 
-        list={jobsList} 
+      <Feed
+        list={jobsList}
         onEndReached={onEndReached}
-        />
+        keyExtractor={getKey}
+        renderItem={renderItem}
+        renderFooter={renderFooter}
+      />
     </section>
   )
 
 }
 
-const Feed = ({ list, onEndReached }) => {
+const Feed = ({ list, onEndReached, keyExtractor, renderItem, renderFooter }) => {
 
   useEffect(() => {
     const onScroll = () => {
@@ -74,13 +84,21 @@ const Feed = ({ list, onEndReached }) => {
     return () => window.removeEventListener('scroll', onScroll);
   }, [onEndReached])
 
-  return list.map(el => (
-    <div style={{ height: 100 }} key={el.jdUid} >
-      <p>{el.companyName}, {el.jobRole}</p>
-    </div>
-  ))
+  return (
+    <>
+      {
+        list.map((element, index) => (
+          <Fragment key={keyExtractor(element, index)} >
+            {renderItem(element, index)}
+          </Fragment>
+        ))
+      }
+      {
+        renderFooter()
+      }
+    </>
+  )
 
 }
-
 
 export default App;
