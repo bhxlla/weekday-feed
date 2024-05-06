@@ -1,0 +1,10 @@
+.feed-page {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    grid-auto-rows: minmax(100px, auto);
+
+    padding: 3rem;
+
+}

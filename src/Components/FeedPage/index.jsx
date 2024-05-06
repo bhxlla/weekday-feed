@@ -3,6 +3,8 @@ import ApiUtils from "../../Utils/Api";
 import { FeedElement } from "../FeedElement";
 import { Feed } from '../Feed';
 
+import './style.css';
+
 const INIT_PAGE_SIZE = 30;
 const NEXT_PAGE_SIZE = 20;
 
