@@ -1,0 +1,127 @@
+.feed-element {
+    padding: 1.4rem;
+
+    border-radius: 16px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+    text-align: start;
+}
+
+.feed-element-header {
+    display: flex;
+    align-items: flex-start;
+}
+
+.feed-element-logo > img {
+    width: 40px;
+}
+
+.feed-element-title {
+    flex: 1;
+    text-align: start;
+    padding-left: 12px;
+}
+
+.feed-element-company-name {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 3px;
+    color: #8b8b8b;
+}
+
+.feed-element-role {
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.87);
+    text-transform: capitalize;
+}
+
+.feed-element-location {
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 5px;
+    color: rgba(0, 0, 0, 0.87);
+    text-transform: capitalize;
+}
+
+
+
+.feed-element-salary {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 8px 0;
+    color: rgb(77, 89, 106);
+}
+
+.feed-element-abt-company {
+    margin-top: 10px;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.feed-element-abt-us {
+    color: rgba(0, 0, 0, 0.87);
+    white-space: pre-wrap;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.feed-element-detail {
+    white-space: pre-wrap;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.87);
+    font-weight: 300;
+}
+
+.feed-element-exp {
+    margin-top: 10px;
+}
+
+.feed-element-exp-title {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 3px;
+    color: #8b8b8b;
+}
+
+.feed-element-exp-value {
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+.feed-element-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.feed-element-footer-apply {
+    margin: 5px 0;
+    background-color: rgb(85, 239, 196);
+    padding: 8px 18px;
+    color: black;
+}
+
+.feed-element-footer-referrals {
+    margin: 5px 0;
+    background-color: rgb(73, 67, 218);
+    padding: 8px 18px;
+    color: white;
+}
+
+.feed-element-footer > a {
+    text-decoration: none;
+    padding: 12px;
+    font-weight: 500;
+    width: 100%;
+    border-radius: 8px;
+    text-align: center;
+}
