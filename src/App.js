@@ -21,14 +21,16 @@ const FeedPage = () => {
   const [jobsList, setJobsList] = useState([]);
   const [offset, setOffset] = useState(0);
   const [bottomLoading, setBottomLoading] = useState(false);
+  const [ended, setEnded] = useState(false);
 
   const getData = useCallback(() => {
     const { fetchData, cancel } = Api.fetcher(offset, offset === 0 ? INIT_PAGE_SIZE : NEXT_PAGE_SIZE)
     setBottomLoading(true);
     fetchData()
-      .then(({ offset, jdList }) => {
+      .then(({ offset, jdList, end }) => {
         setJobsList(list => [...list, ...jdList]);
         setOffset(offset);
+        setEnded(end)
       })
       .catch(() => { })
       .finally(() => setBottomLoading(false))
@@ -42,10 +44,11 @@ const FeedPage = () => {
   }, [])
 
   const onEndReached = useCallback(() => {
-    if(bottomLoading) { return; }
+    if (bottomLoading || ended) { return; }
     setBottomLoading(true);
     getData();
-  }, [getData, bottomLoading, setBottomLoading])
+  }, [getData, bottomLoading, setBottomLoading, ended])
+
 
   return (
     <section>
