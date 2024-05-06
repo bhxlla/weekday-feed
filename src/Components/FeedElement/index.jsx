@@ -15,8 +15,13 @@ import './style.css'
     salaryCurrencyCode
   }) => {
   
+    const [fullText, setFullText] = useState(false);
   
-  
+    const detailText = fullText ? jobDetailsFromCompany : `${jobDetailsFromCompany.slice(0, 2 * (jobDetailsFromCompany.length / 3))}...`;
+    const seeMoreText = fullText ? "See Less" : "See More";
+
+    const toggleSeeMore = useCallback(() => setFullText(value => !value), [setFullText])
+
     return (
       <div className='feed-element' >
         <div className='feed-element-header' >
@@ -36,7 +41,7 @@ import './style.css'
   
         <p className='feed-element-abt-us' >About Us</p>
   
-        <p className='feed-element-detail' >{`${jobDetailsFromCompany}`}</p>
+        <p className='feed-element-detail' >{`${detailText}`} <button onClick={toggleSeeMore} className='feed-element-see-btn' >{ seeMoreText }</button></p>
   
         <div className='feed-element-exp' >
           <h3 className='feed-element-exp-title' >Minimum Experience</h3>
