@@ -1,7 +1,8 @@
-import { useCallback, useEffect, useState } from "react";
+import { memo, useCallback, useEffect, useState } from "react";
+import { FeedList } from "../FeedList";
+
 import ApiUtils from "../../Utils/Api";
-import { FeedElement } from "../FeedElement";
-import { Feed } from '../Feed';
+import { FeedContext } from "../../Utils/FeedContext";
 
 import './style.css';
 
@@ -9,6 +10,20 @@ const INIT_PAGE_SIZE = 30;
 const NEXT_PAGE_SIZE = 20;
 
 export const FeedPage = () => {
+
+  const [filterValues, setFilterValues] = useState({});
+  const [appliedFilters, setAppliedFilters] = useState({});
+
+  return (
+    <FeedContext.Provider
+      value={{ filterValues, appliedFilters, setFilterValues, setAppliedFilters }}
+    >
+      <MemoizedFeedComponent />
+    </FeedContext.Provider>
+  )
+}
+
+const FeedComponent = () => {
 
   const [jobsList, setJobsList] = useState([]);
   const [offset, setOffset] = useState(0);
@@ -42,24 +57,13 @@ export const FeedPage = () => {
     getData();
   }, [getData, bottomLoading, setBottomLoading, ended])
 
-  const getKey = useCallback(el => el.jdUid, [])
-
-  const renderItem = useCallback((el) => (
-    <FeedElement {...el} />
-  ), [])
-
-  const renderFooter = useCallback(() => bottomLoading ? (<h1>LOADING</h1>) : <></>, [bottomLoading])
-
   return (
-    <section className="feed-page" >
-      <Feed
-        list={jobsList}
-        onEndReached={onEndReached}
-        keyExtractor={getKey}
-        renderItem={renderItem}
-        renderFooter={renderFooter}
-      />
-    </section>
+    <FeedList
+      list={jobsList}
+      onEndReached={onEndReached}
+      bottomLoading={bottomLoading}
+    />
   )
-
 }
+
+const MemoizedFeedComponent = memo(FeedComponent);
