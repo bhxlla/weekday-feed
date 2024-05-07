@@ -51,7 +51,7 @@
     border-radius: 4px;
     display: flex;
     align-items: center;
-    margin: 0 4px;
+    margin: 2px 4px;
 }
 
 .feed-filter-selected-box-cross {
@@ -75,6 +75,7 @@ p.feed-filter-selected, .filter-options > p {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
 .filter-arrow {
@@ -91,7 +92,7 @@ p.feed-filter-selected, .filter-options > p {
     background: white;
 
     position: absolute;
-    top: 120%;
+    top: 105%;
     left: 0px;
 
     overflow: scroll;
