@@ -12,7 +12,5 @@ export const filterJobListByAppliedFilters = (list, appliedFilters) => list.filt
     const salaryCondition = appliedFilters['minJdSalary'][0] ? (obj['minJdSalary'] || 0) >= appliedFilters['minJdSalary'][0] : true
     const expCondition = appliedFilters['minExp'][0] ? (obj['minExp'] || 0) >= appliedFilters['minExp'][0] : true
 
-    console.log(obj.companyName, salaryCondition, expCondition);
-
     return salaryCondition && expCondition && true;
   });

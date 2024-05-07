@@ -2,7 +2,7 @@
 const ApiUtils = {
 
     fetcher: (offset = 0, limit = 10) => {
-
+        // console.log("CALLED WITH ", offset)
         const controller = new AbortController();
 
         return {

@@ -53,7 +53,7 @@ const FeedComponent = () => {
   }, [])
 
   const onEndReached = useCallback(() => {
-    console.log("END");
+    // console.log("END");
     if (bottomLoading || ended) { return; }
     setBottomLoading(true);
     getData();
