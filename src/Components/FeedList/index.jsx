@@ -8,7 +8,7 @@ import { FeedContext } from "../../Utils/FeedContext";
 import { useCatchFilterValues } from "../../Utils/hooks";
 import { filterJobListByAppliedFilters } from "../../Utils/Filter";
 
-
+// Takes list data as props, main purpose is to decouple filtering from loading job list.
 export const FeedList = ({
     list, onEndReached, bottomLoading
   }) => {

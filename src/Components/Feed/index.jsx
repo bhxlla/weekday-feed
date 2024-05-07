@@ -1,5 +1,6 @@
 import { Fragment, useEffect } from "react";
 
+// A resuable Component which shows data in a infinite scrollable list, uses renderProps as UI.
 export const Feed = ({ list, onEndReached, keyExtractor, renderItem, renderFooter }) => {
 
     useEffect(() => {

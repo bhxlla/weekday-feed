@@ -1,3 +1,4 @@
+// A Single Reusable N/w request helper, is used throughout the app.
 const ApiUtils = {
 
     fetcher: (offset = 0, limit = 10) => {

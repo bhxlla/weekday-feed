@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Close, DownArrow, UpArrow } from "../../Utils/Arrows";
 
+// A Reusable Single Filter Component in a dropdown fashion, takes various props - allOptions, selectedOptions. 
 export const Filter = ({
     allOptions,
     onSelectOption,

@@ -9,6 +9,7 @@ import './style.css';
 const INIT_PAGE_SIZE = 30;
 const NEXT_PAGE_SIZE = 20;
 
+// Main Component, Entry Point After App.js, uses FeedContext to pass filterValues and selector callbacks.
 export const FeedPage = () => {
 
   const [filterValues, setFilterValues] = useState({});
@@ -23,6 +24,7 @@ export const FeedPage = () => {
   )
 }
 
+// Handles all the JOB Feed Loading. Used Directly in FeedPage.
 const FeedComponent = () => {
 
   const [jobsList, setJobsList] = useState([]);

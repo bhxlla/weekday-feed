@@ -1,3 +1,4 @@
+// Used for Filtering out Jobs based on Filters Applied.
 export const filterJobListByAppliedFilters = (list, appliedFilters) => list.filter(obj => {
     for (const [key, value] of Object.entries(appliedFilters)) {
       if (value.length === 0 || key === 'minJdSalary' || key === 'minExp') continue;

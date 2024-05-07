@@ -4,6 +4,7 @@ import { Filter } from '../Filter';
 
 import './style.css'
 
+// Represents the Filters at the top, contains several individual filter elements.
 const FeedFilterComponent = () => {
 
     const { filterValues, setAppliedFilters } = useContext(FeedContext);

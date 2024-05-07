@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react'
 import './style.css'
 
+// Represents a single Job Feed element in the list. shows Job Details.
   export const FeedElement = ({
     companyName,
     jdLink,

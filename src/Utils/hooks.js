@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react"
 import { FeedContext } from "./FeedContext"
 
-
+// Used to Create Values to Select Filter Options from, based on Downloaded Job List.
 export const useCatchFilterValues = (jobsList = []) => {
 
     const { setFilterValues } = useContext(FeedContext)
