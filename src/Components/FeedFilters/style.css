@@ -6,7 +6,8 @@
     display: flex;
 
     flex-wrap: wrap;
-    
+
+    margin-bottom: 0;
 }
 
 .feed-filters .feed-filter {
@@ -105,4 +106,17 @@ p.feed-filter-selected, .filter-options > p {
 .filter-options p {
     padding: 8px;
     cursor: pointer;
+}
+
+
+@media screen and (max-width: 750px) {
+    .feed-filters {
+        margin: 1rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .feed-filters {
+        flex-direction: column;
+    }
 }

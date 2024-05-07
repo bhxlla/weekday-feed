@@ -9,3 +9,30 @@
     grid-auto-rows: minmax(100px, auto);
 
 }
+
+@media (max-width: 1000px) {
+    .feed-page > .feed-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 750px) {
+    .feed-page {
+        padding: 2rem;
+    }
+    .feed-page > .feed-container {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .feed-page > .feed-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width: 400px) {
+    .feed-page {
+        padding: 1rem;
+    }
+}
