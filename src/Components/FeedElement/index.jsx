@@ -23,6 +23,15 @@ import './style.css'
 
     const toggleSeeMore = useCallback(() => setFullText(value => !value), [setFullText])
 
+    const salaryRange = 
+      minJdSalary && maxJdSalary ? 
+        `${minJdSalary} LPA - ${maxJdSalary} LPA` 
+          : maxJdSalary ? 
+            `Upto ${maxJdSalary}LPA` 
+              : minJdSalary 
+                ? `${minJdSalary}+` 
+                  : "N/A"
+
     return (
       <div className='feed-element' >
         <div className='feed-element-header' >
@@ -36,7 +45,7 @@ import './style.css'
           </div>
         </div>
   
-        <p className='feed-element-salary' >Estimated Salary: {minJdSalary} - {maxJdSalary}</p>
+        <p className='feed-element-salary' >Estimated Salary: {salaryRange}</p>
   
         <p className='feed-element-abt-company' >About Company:</p>
   
@@ -46,7 +55,7 @@ import './style.css'
   
         <div className='feed-element-exp' >
           <h3 className='feed-element-exp-title' >Minimum Experience</h3>
-          <p className='feed-element-exp-value' >{minExp} years</p>
+          <p className='feed-element-exp-value' >{ minExp ? `${minExp} years` : "N/A"}</p>
         </div>
   
         <div className='feed-element-footer' >
