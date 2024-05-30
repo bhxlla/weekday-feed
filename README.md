@@ -1,4 +1,4 @@
-# Weekday Feed Assignment
+# Weekday Feed
 
 ## Installation:
 - clone the repo.
